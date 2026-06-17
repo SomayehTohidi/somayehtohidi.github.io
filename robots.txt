@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://somayehtohidi.github.io/sitemap.xml
