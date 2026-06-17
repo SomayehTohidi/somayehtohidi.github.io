@@ -117,7 +117,7 @@ a { color: var(--accent); }
   display: block;
   margin: 0 0 32px;
 }
-.page-photo.landscape { width: 100%; max-width: 520px; height: auto; }
+.page-photo.landscape { width: 100%; max-width: 360px; height: auto; }
 .page-photo.portrait { width: 100%; max-width: 320px; height: auto; }
 
 /* Papers (details/summary accordion) */
