@@ -1,0 +1,185 @@
+:root {
+  --ink: #1a1a1a;
+  --muted: #555;
+  --faint: #888;
+  --line: #e3e3e3;
+  --accent: #6b4fa0;
+  --bg: #ffffff;
+  --max: 920px;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Nunito', sans-serif;
+  color: var(--ink);
+  background: var(--bg);
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+.wrap {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* Header / nav */
+.site-header {
+  border-bottom: 1px solid var(--line);
+  position: sticky;
+  top: 0;
+  background: rgba(255,255,255,0.92);
+  backdrop-filter: blur(6px);
+  z-index: 10;
+}
+.site-header .wrap {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  padding-top: 18px;
+  padding-bottom: 18px;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.brand {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--ink);
+  text-decoration: none;
+  letter-spacing: 0.2px;
+}
+.nav {
+  display: flex;
+  gap: 22px;
+}
+.nav a {
+  font-size: 16px;
+  color: var(--muted);
+  text-decoration: none;
+  padding-bottom: 2px;
+  border-bottom: 2px solid transparent;
+}
+.nav a:hover { color: var(--ink); }
+.nav a.active {
+  color: var(--ink);
+  border-bottom-color: var(--accent);
+}
+
+/* Main */
+main { padding: 40px 0 80px; }
+
+h1.page-title {
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 1.1;
+  margin-bottom: 26px;
+}
+@media (max-width: 640px) { h1.page-title { font-size: 32px; } }
+
+p { margin-bottom: 16px; font-size: 16px; }
+a { color: var(--accent); }
+
+/* About layout */
+.about-grid {
+  display: flex;
+  gap: 40px;
+  align-items: flex-start;
+}
+.about-text { flex: 1 1 0; min-width: 0; }
+.about-photo { flex: 0 0 300px; }
+.about-photo img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  display: block;
+}
+.links { margin-top: 24px; }
+.links p { margin-bottom: 6px; font-size: 15px; }
+@media (max-width: 720px) {
+  .about-grid { flex-direction: column; gap: 24px; }
+  .about-photo { flex: 1 1 auto; max-width: 340px; }
+}
+
+/* Section headings */
+.section-title {
+  font-size: 22px;
+  font-weight: 700;
+  margin: 34px 0 10px;
+}
+.section-title:first-of-type { margin-top: 0; }
+
+/* Page intro photo */
+.page-photo {
+  border-radius: 8px;
+  display: block;
+  margin: 0 0 32px;
+}
+.page-photo.landscape { width: 100%; max-width: 520px; height: auto; }
+.page-photo.portrait { width: 100%; max-width: 320px; height: auto; }
+
+/* Papers (details/summary accordion) */
+.paper {
+  border-bottom: 1px solid var(--line);
+}
+.paper summary {
+  list-style: none;
+  cursor: pointer;
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  padding: 11px 0;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.45;
+}
+.paper summary::-webkit-details-marker { display: none; }
+.paper summary::before {
+  content: "\25B6";
+  font-size: 11px;
+  color: var(--faint);
+  flex: 0 0 auto;
+  transition: transform 0.18s ease;
+  line-height: 1.5;
+  font-weight: 400;
+}
+.paper[open] summary::before { transform: rotate(90deg); }
+.coauthors { font-weight: 400; color: var(--muted); }
+.coauthors a { color: var(--accent); }
+.venue { font-weight: 400; font-style: italic; color: var(--muted); }
+.pbody { padding: 0 0 14px 21px; }
+.authors { font-size: 12px; color: var(--muted); margin-bottom: 6px; }
+.abstract { font-size: 13px; line-height: 1.65; color: #2a2a2a; }
+
+/* Talks list */
+.talk {
+  padding: 11px 0;
+  border-bottom: 1px solid var(--line);
+  font-size: 15px;
+}
+.ttitle { font-weight: 700; }
+.tmeta { font-weight: 400; color: var(--muted); }
+.tmeta a { color: var(--accent); }
+.tag {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 600;
+  border-radius: 4px;
+  padding: 1px 7px;
+  margin-left: 6px;
+  vertical-align: 1px;
+  white-space: nowrap;
+}
+.tag.invited { color: var(--accent); border: 1px solid #cfc2e6; }
+.tag.plain { color: var(--muted); border: 1px solid #d8d8d8; }
+.tag.cancelled { color: #999; border: 1px solid #d8d8d8; }
+
+/* Footer */
+.site-footer {
+  border-top: 1px solid var(--line);
+  padding: 24px 0;
+  font-size: 13px;
+  color: var(--faint);
+}
